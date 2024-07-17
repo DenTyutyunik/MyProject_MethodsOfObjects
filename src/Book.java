@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Book {
 
     private String title;
@@ -27,7 +29,7 @@ public class Book {
     }
 
     public String toString() {
-        return "Book title=[" + title + "], author=[" + author.getFullName() + "], publishDate=[" + publishDate + "]";
+        return "Book title = [" + title + "], author = [" + author.getFullName() + "], publishDate = [" + publishDate + "]";
     }
 
     public boolean isEquals(Object obj) {
@@ -36,11 +38,6 @@ public class Book {
     }
 
     public int hashCode() {
-        final int salt = 10;
-        int result = 0;
-        result += salt * title.hashCode();
-        result += salt * author.hashCode();
-        result += salt * publishDate;
-        return result;
+        return Objects.hash(title, author, publishDate);
     }
 }
