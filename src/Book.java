@@ -33,8 +33,14 @@ public class Book {
     }
 
     public boolean isEquals(Object obj) {
-        Book other = (Book) obj;
-        return title.equals(other.title) && author.equals(other.author) && publishDate == other.publishDate;
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        } else if (this == obj) {
+            return true;
+        } else {
+            Book other = (Book) obj;
+            return title.equals(other.title) && author.equals(other.author) && publishDate == other.publishDate;
+        }
     }
 
     public int hashCode() {

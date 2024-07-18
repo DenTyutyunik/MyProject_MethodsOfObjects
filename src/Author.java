@@ -19,8 +19,14 @@ public class Author {
     }
 
     public boolean isEquals(Object obj) {
-        Author other = (Author) obj;
-        return firstName.equals(other.firstName) && lastName.equals(other.lastName);
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        } else if (this == obj) {
+            return true;
+        } else {
+            Author other = (Author) obj;
+            return firstName.equals(other.firstName) && lastName.equals(other.lastName);
+        }
     }
 
     public int hashCode() {

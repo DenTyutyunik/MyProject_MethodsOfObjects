@@ -45,5 +45,12 @@ public class Main {
         System.out.println();
         System.out.printf("ToString of Book 1: %s\n", book1);
         System.out.printf("ToString of Book 2: %s\n", book2);
+        // Check equals with mistake
+        System.out.printf("Check between Author 1 and Book 1: %s\n", author1.isEquals(book1));
+        System.out.printf("Check between Author 1 and null: %s\n", author1.isEquals(null));
+        System.out.printf("Check between Book 1 and Author 1: %s\n", book1.isEquals(author1));
+        System.out.printf("Check between Book 1 and null: %s\n", book1.isEquals(null));
+        System.out.printf("Check between Book 1 and Book 1: %s\n", book1.isEquals(book1));
+        System.out.printf("Check between Author 1 and Author 1: %s\n", author1.isEquals(author1));
     }
 }
